@@ -1,7 +1,7 @@
 # GOOG Stock Price Forecasting
 ### A Hybrid ARIMA + LSTM Framework
 
-This project forecasts the daily closing price of **Alphabet Inc. (GOOG)** using a two-stage hybrid model:
+This project forecasts the daily closing price of **(GOOG)** using a two-stage hybrid model:
 
 1. **ARIMA** captures the *linear* structure of the price series through a rolling walk-forward forecast.
 2. **LSTM** learns the *non-linear* structure left behind in the ARIMA residuals.
