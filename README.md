@@ -125,20 +125,3 @@ Even **0.05% per trade** across hundreds of trades would eat into the already mo
 The hybrid ARIMA + LSTM framework offers a structured, multi-layered approach to price tracking. While the walk-forward loop produces low error metrics (RMSE/MAPE), these numbers are misleading on their own — a naive "no change" baseline scores *slightly better*, and true validation requires a directional backtest. Here, that backtest reveals a win rate barely above chance and returns well below simple Buy & Hold, showing that low error does not translate into real trading skill once market noise and trading friction are accounted for. The real deliverable is a correctly engineered, leak-free pipeline and the diagnostics that expose *why* daily-price hybrid models struggle to beat a random walk.
 
 ---
-
-## Tech Stack
-
-`yfinance` (data) · `statsmodels` (ADF, decomposition, ACF/PACF, ARIMA) · `scikit-learn` (scaling) · `TensorFlow / Keras` (LSTM) · `pandas` · `NumPy` · `matplotlib`
-
-## Getting Started
-
-```bash
-pip install yfinance statsmodels scikit-learn tensorflow pandas numpy matplotlib
-jupyter notebook GOOG_stock_price_forecasting.ipynb
-```
-
-Run all cells top to bottom. The notebook downloads fresh data on each run, so exact figures will drift slightly as the underlying GOOG history updates.
-
-## Disclaimer
-
-Research / educational purposes only — **not financial advice**. The backtest does not account for transaction costs, slippage, or market impact, and results from a single test window should not be assumed to generalize to other time periods or tickers.
